@@ -8,13 +8,14 @@ import math
 def ExportImage(CanvazSize, DisplayText, TextColor):
     #Display Values
     MaxFontSize = math.floor(CanvazSize[0] / 5)
-    #Image
+
+    #Image file generation
     img = Image.new('RGB', (CanvazSize[0], CanvazSize[1]), color = 'red')
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype(r"/Users/johannes/Desktop/Python-Kalender-Prosjekt/Timeplan/Python/Plugins/CHELON.ttf", MaxFontSize)
-    w, h = draw.textsize(DisplayText, font=font)
-    draw.text(((CanvazSize[0]-w)/2,0), DisplayText, font=font, fill = TextColor)
-    draw.text(((CanvazSize[0]-w)/2,h), DisplayText, font=font, fill = TextColor)
+    FontSizeW, FontSizeH = draw.textsize(DisplayText, font=font)
+    draw.text(((CanvazSize[0]-FontSizeW)/2,0), DisplayText, font=font, fill = TextColor)
+    draw.text(((CanvazSize[0]-FontSizeW)/2,FontSizeH), DisplayText, font=font, fill = TextColor)
     img.show()
 
 #Display Conf
