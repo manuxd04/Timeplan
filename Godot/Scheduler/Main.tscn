@@ -102,8 +102,8 @@ size_flags_vertical = 3
 color = Color( 0.152941, 0.152941, 0.152941, 1 )
 
 [node name="Margin" type="MarginContainer" parent="Margin/Content/Body"]
-margin_right = 1004.0
-margin_bottom = 526.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 10
