@@ -1,7 +1,7 @@
 extends Node
 
 
-func style2dict(style: StyleBox):
+func style2dict(style: StyleBox, scale: Vector2 = Vector2(1,1)):
 	if style is StyleBoxFlat:
 		return {
 			"type": "flat",
@@ -60,7 +60,8 @@ func style2dict(style: StyleBox):
 			"format": data["format"],
 			"height": data["height"],
 			"width": data["width"],
-			"mipmaps": data["mipmaps"]
+			"mipmaps": data["mipmaps"],
+			"scale": [scale.x, scale.y]
 		}
 	
 	return null

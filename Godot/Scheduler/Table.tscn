@@ -1,171 +1,227 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Table.gd" type="Script" id=1]
 
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0, 0, 0, 1 )
+[sub_resource type="StyleBoxEmpty" id=10]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxLine" id=7]
+color = Color( 0.25098, 0.25098, 0.25098, 1 )
+grow_begin = -19.0
+grow_end = 0.0
+thickness = 2
+
+[sub_resource type="StyleBoxLine" id=8]
+color = Color( 0.25098, 0.25098, 0.25098, 1 )
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 2
+vertical = true
+
+[sub_resource type="StyleBoxEmpty" id=9]
 
 [node name="Table" type="PanelContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_scale = Vector2( 0.5, 0.5 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 10 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Vertical" type="VBoxContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_right = 1056.0
+margin_bottom = 640.0
+size_flags_horizontal = 0
+custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Top" type="HBoxContainer" parent="Vertical"]
-margin_right = 1024.0
+margin_right = 1056.0
 
 [node name="Separator" type="HSeparator" parent="Vertical"]
-margin_top = 4.0
-margin_right = 1024.0
-margin_bottom = 8.0
-custom_styles/separator = SubResource( 2 )
+margin_right = 1056.0
+margin_bottom = 20.0
+custom_styles/separator = SubResource( 7 )
+custom_constants/separation = 20
 
 [node name="Horizontal" type="HBoxContainer" parent="Vertical"]
-margin_top = 12.0
-margin_right = 1024.0
-margin_bottom = 600.0
-size_flags_vertical = 3
+margin_top = 20.0
+margin_right = 1056.0
+margin_bottom = 640.0
+custom_constants/separation = 0
 
 [node name="Side" type="VBoxContainer" parent="Vertical/Horizontal"]
-margin_bottom = 588.0
+margin_bottom = 620.0
 
 [node name="Separator" type="VSeparator" parent="Vertical/Horizontal"]
-visible = false
-margin_left = 4.0
-margin_right = 8.0
-margin_bottom = 588.0
+margin_right = 20.0
+margin_bottom = 620.0
+custom_styles/separator = SubResource( 8 )
+custom_constants/separation = 20
 
-[node name="Columns" type="HBoxContainer" parent="Vertical/Horizontal"]
-visible = false
-margin_left = 12.0
+[node name="Content" type="PanelContainer" parent="Vertical/Horizontal"]
+margin_left = 20.0
 margin_right = 1056.0
-margin_bottom = 588.0
-size_flags_horizontal = 3
+margin_bottom = 620.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="Columns" type="HBoxContainer" parent="Vertical/Horizontal/Content"]
+margin_right = 1036.0
+margin_bottom = 620.0
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="1" type="VBoxContainer" parent="Vertical/Horizontal/Columns"]
+[node name="1" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
 margin_right = 100.0
-margin_bottom = 588.0
+margin_bottom = 620.0
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Columns/1"]
+[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
 margin_right = 100.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 
-[node name="4" type="VBoxContainer" parent="Vertical/Horizontal/Columns"]
+[node name="Panel2" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+margin_top = 104.0
+margin_right = 100.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Panel5" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+margin_top = 208.0
+margin_right = 100.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Panel6" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+margin_top = 312.0
+margin_right = 100.0
+margin_bottom = 412.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Panel3" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+margin_top = 416.0
+margin_right = 100.0
+margin_bottom = 516.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Panel4" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+margin_top = 520.0
+margin_right = 100.0
+margin_bottom = 620.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="2" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
 margin_left = 104.0
 margin_right = 204.0
-margin_bottom = 588.0
+margin_bottom = 620.0
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Columns/4"]
+[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
 margin_right = 100.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 
-[node name="5" type="VBoxContainer" parent="Vertical/Horizontal/Columns"]
+[node name="3" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
 margin_left = 208.0
 margin_right = 308.0
-margin_bottom = 588.0
+margin_bottom = 620.0
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Columns/5"]
+[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
 margin_right = 100.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 
-[node name="6" type="VBoxContainer" parent="Vertical/Horizontal/Columns"]
+[node name="Panel2" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
+margin_top = 104.0
+margin_right = 100.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="4" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
 margin_left = 312.0
 margin_right = 412.0
-margin_bottom = 588.0
+margin_bottom = 620.0
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Columns/6"]
+[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
 margin_right = 100.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 
-[node name="7" type="VBoxContainer" parent="Vertical/Horizontal/Columns"]
+[node name="Panel2" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+margin_top = 104.0
+margin_right = 100.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Panel3" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+margin_top = 208.0
+margin_right = 100.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="5" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
 margin_left = 416.0
 margin_right = 516.0
-margin_bottom = 588.0
+margin_bottom = 620.0
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Columns/7"]
+[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
 margin_right = 100.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 
-[node name="8" type="VBoxContainer" parent="Vertical/Horizontal/Columns"]
+[node name="6" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
 margin_left = 520.0
 margin_right = 620.0
-margin_bottom = 588.0
+margin_bottom = 620.0
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Columns/8"]
+[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/6"]
 margin_right = 100.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 
-[node name="9" type="VBoxContainer" parent="Vertical/Horizontal/Columns"]
+[node name="7" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
 margin_left = 624.0
 margin_right = 724.0
-margin_bottom = 588.0
+margin_bottom = 620.0
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Columns/9"]
+[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/7"]
 margin_right = 100.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 
-[node name="10" type="VBoxContainer" parent="Vertical/Horizontal/Columns"]
+[node name="8" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
 margin_left = 728.0
 margin_right = 828.0
-margin_bottom = 588.0
+margin_bottom = 620.0
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Columns/10"]
+[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/8"]
 margin_right = 100.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 
-[node name="11" type="VBoxContainer" parent="Vertical/Horizontal/Columns"]
+[node name="9" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
 margin_left = 832.0
 margin_right = 932.0
-margin_bottom = 588.0
+margin_bottom = 620.0
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Columns/11"]
+[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/9"]
 margin_right = 100.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 
-[node name="12" type="VBoxContainer" parent="Vertical/Horizontal/Columns"]
+[node name="10" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
 margin_left = 936.0
 margin_right = 1036.0
-margin_bottom = 588.0
+margin_bottom = 620.0
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Columns/12"]
+[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/10"]
 margin_right = 100.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 
-[node name="2" type="VBoxContainer" parent="Vertical/Horizontal/Columns"]
-margin_left = 1040.0
-margin_right = 1040.0
-margin_bottom = 588.0
-
-[node name="3" type="VBoxContainer" parent="Vertical/Horizontal/Columns"]
-margin_left = 1044.0
-margin_right = 1044.0
-margin_bottom = 588.0
+[connection signal="resized" from="Vertical/Horizontal/Content" to="." method="_on_Content_resized"]
