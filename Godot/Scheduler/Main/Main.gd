@@ -14,6 +14,7 @@ extends Control
 
 
 
-
+func _ready():
+	var _a = Canvas.new()
 
 

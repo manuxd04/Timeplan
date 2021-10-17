@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Tabs.gd" type="Script" id=1]
-[ext_resource path="res://Theme.tres" type="Theme" id=2]
-[ext_resource path="res://Table.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Main.gd" type="Script" id=4]
+[ext_resource path="res://Main/Tabs.gd" type="Script" id=1]
+[ext_resource path="res://Main/Main.gd" type="Script" id=2]
+[ext_resource path="res://Main/Table/Table.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Theme.tres" type="Theme" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -12,13 +12,13 @@ bg_color = Color( 0.25098, 0.25098, 0.25098, 1 )
 corner_detail = 10
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.168627, 0.164706, 0.164706, 1 )
+bg_color = Color( 0.164706, 0.164706, 0.164706, 1 )
 
 [node name="Root" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 2 )
-script = ExtResource( 4 )
+theme = ExtResource( 4 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -139,6 +139,7 @@ margin_right = 1056.0
 margin_bottom = 640.0
 rect_scale = Vector2( 1, 1 )
 custom_styles/panel = SubResource( 3 )
+bg_color = Color( 0.12549, 0.192157, 0.607843, 0 )
 
 [node name="(Objects)" type="ColorRect" parent="Margin/Content/Body/Margin/Splitter"]
 margin_left = 826.0
@@ -146,4 +147,4 @@ margin_right = 984.0
 margin_bottom = 502.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
-color = Color( 0.168627, 0.164706, 0.164706, 1 )
+color = Color( 0.164706, 0.164706, 0.164706, 1 )

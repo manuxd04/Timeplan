@@ -6,6 +6,7 @@ export(Color) var bg_color = Color(0,0,0,0) setget set_color
 export(Texture) var bg_texture = null setget set_texture
 export(Vector2) var texture_scale = Vector2(1,1) setget set_texture_scale
 
+
 onready var bg = get_node("Vertical/Horizontal/Content")
 
 func _ready():

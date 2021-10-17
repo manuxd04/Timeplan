@@ -1,6 +1,5 @@
 extends Node
 
-
 func style2dict(style: StyleBox, scale: Vector2 = Vector2(1,1)):
 	if style is StyleBoxFlat:
 		return {
