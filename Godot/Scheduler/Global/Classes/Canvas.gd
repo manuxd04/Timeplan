@@ -12,14 +12,14 @@ var elements = []
 
 
 
-# ---------- Misc ---------- #
+# ---------- Element ID ---------- #
 
 var _id_counter = 0
 func get_unique_id():
 	_id_counter += 1
 	return _id_counter - 1
 
-# ---------- Misc ---------- #
+# ---------- Element ID ---------- #
 
 
 

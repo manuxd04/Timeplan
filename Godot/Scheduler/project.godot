@@ -42,6 +42,13 @@ FileHandler="*res://Global/FileHandler.gd"
 ThemeHandler="*res://Global/ThemeHandler.gd"
 StyleConverter="*res://Global/StyleConverter.gd"
 
+[importer_defaults]
+
+texture={
+"flags/filter": false,
+"flags/repeat": 1
+}
+
 [physics]
 
 common/enable_pause_aware_picking=true
