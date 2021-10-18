@@ -7,8 +7,6 @@ import math
 #Generate Image
 def MakeTextBox(draw, ImagePos, FontSizeW, FontSizeH):
     Width = 5
-    FontSizeH = FontSizeH - Width
-    FontSizeW = FontSizeW - Width
     #Top Line
     draw.line((ImagePos[0], ImagePos[1], ImagePos[0] + FontSizeW, ImagePos[1]), width = Width)
     #Left Line
