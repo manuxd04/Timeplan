@@ -29,8 +29,8 @@ func _ready():
 	style.draw_center = false
 	style.border_color = ThemeHandler.primary
 	style.border_width_bottom = line_width
-	style.content_margin_bottom = 5 * ThemeHandler.ui_scale
-	style.content_margin_top = 5 * ThemeHandler.ui_scale
+	style.content_margin_bottom = 2 * ThemeHandler.ui_scale
+	style.content_margin_top = 2 * ThemeHandler.ui_scale
 	style.content_margin_left = 5 * ThemeHandler.ui_scale
 	style.content_margin_right = 5 * ThemeHandler.ui_scale
 	

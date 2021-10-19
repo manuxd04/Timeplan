@@ -1,7 +1,7 @@
 extends Control
 
 export(Array, NodePath) onready var separators
-export(NodePath) onready var body_margin = get_node(body_margin) as MarginContainer
+export(Array, NodePath) onready var margins
 #export(NodePath) onready var node_name = get_node(node_name) as node_type
 #export(NodePath) onready var node_name = get_node(node_name) as node_type
 #export(NodePath) onready var node_name = get_node(node_name) as node_type
@@ -18,6 +18,8 @@ export(NodePath) onready var body_margin = get_node(body_margin) as MarginContai
 
 
 func _ready():
+	theme = ThemeHandler.theme
+	
 	for path in separators:
 		var separator = get_node(path)
 		separator.set(
@@ -25,13 +27,10 @@ func _ready():
 			separator.get("custom_constants/separation") * ThemeHandler.ui_scale
 		)
 
-	var margin_value = 10 * ThemeHandler.ui_scale
-	$Margin.add_constant_override("margin_top", margin_value)
-	$Margin.add_constant_override("margin_left", margin_value)
-	$Margin.add_constant_override("margin_bottom", margin_value)
-	$Margin.add_constant_override("margin_right", margin_value)
-
-	body_margin.add_constant_override("margin_top", margin_value)
-	body_margin.add_constant_override("margin_left", margin_value)
-	body_margin.add_constant_override("margin_bottom", margin_value)
-	body_margin.add_constant_override("margin_right", margin_value)
+	for path in margins:
+		for pos in ["top","bottom","left","right"]:
+			var margin = get_node(path)
+			margin.add_constant_override(
+				"margin_"+pos,
+				margin.get("custom_constants/margin_"+pos) * ThemeHandler.ui_scale
+			)

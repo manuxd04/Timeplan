@@ -3,7 +3,7 @@
 [ext_resource path="res://Main/Tabs.gd" type="Script" id=1]
 [ext_resource path="res://Main/Main.gd" type="Script" id=2]
 [ext_resource path="res://Main/Table/Table.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Theme/OutputTheme.tres" type="Theme" id=4]
+[ext_resource path="res://Theme/Theme.tres" type="Theme" id=4]
 [ext_resource path="res://Global/Classes/TopButton.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
@@ -24,7 +24,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 separators = [ NodePath("Margin/Content/Separator"), NodePath("Margin/Content/Body/Margin/Splitter") ]
-body_margin = NodePath("Margin/Content/Body/Margin")
+margins = [ NodePath("Margin"), NodePath("Margin/Content/Body/Margin") ]
 
 [node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
