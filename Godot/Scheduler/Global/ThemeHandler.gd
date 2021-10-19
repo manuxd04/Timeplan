@@ -10,8 +10,10 @@ const DEFAULT : Theme = preload("res://Theme/Theme.tres")
 var theme : Theme = DEFAULT.duplicate()
 
 var ui_scale = OS.get_screen_scale()
+const MAX_SCALE = 5
 
 var scroll_sensitivity = 0.1
+
 
 func _ready():
 	_reload_theme()
@@ -32,14 +34,22 @@ func _reload_theme():
 
 
 func _input(event):
-	if event is InputEventMouseButton and Input.is_action_pressed("ctrl"):
-		if event.button_index == 5 and ui_scale > OS.get_screen_scale():
-			ui_scale -= event.factor * scroll_sensitivity
-		elif event.button_index == 4 and ui_scale < OS.get_screen_scale() * 5:
-			ui_scale += event.factor * scroll_sensitivity
+	if Input.is_action_pressed("ctrl"):
+		if event is InputEventMouseButton:
+			if event.button_index == 5 and ui_scale > OS.get_screen_scale():
+				ui_scale -= event.factor * scroll_sensitivity
+			elif event.button_index == 4 and ui_scale < OS.get_screen_scale() * MAX_SCALE:
+				ui_scale += event.factor * scroll_sensitivity
+			else: return
+		elif event is InputEventPanGesture:
+			ui_scale = min(
+				max(ui_scale - event.delta.y * scroll_sensitivity, OS.get_screen_scale()),
+				OS.get_screen_scale() * MAX_SCALE
+			)
 		else: return
 		get_tree().reload_current_scene()
 		_reload_theme()
+
 
 
 
