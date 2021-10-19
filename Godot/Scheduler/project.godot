@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "Header",
 "language": "GDScript",
 "path": "res://Global/Classes/Header.gd"
+}, {
+"base": "Button",
+"class": "TopButton",
+"language": "GDScript",
+"path": "res://Global/Classes/TopButton.gd"
 } ]
 _global_script_class_icons={
 "Canvas": "",
 "Element": "",
-"Header": ""
+"Header": "",
+"TopButton": ""
 }
 
 [application]
@@ -41,6 +47,16 @@ config/icon="res://Assets/icon.png"
 FileHandler="*res://Global/FileHandler.gd"
 ThemeHandler="*res://Global/ThemeHandler.gd"
 StyleConverter="*res://Global/StyleConverter.gd"
+
+[debug]
+
+gdscript/warnings/return_value_discarded=false
+
+[display]
+
+window/size/test_width=2048
+window/size/test_height=1200
+window/dpi/allow_hidpi=true
 
 [importer_defaults]
 
