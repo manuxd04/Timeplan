@@ -1,6 +1,8 @@
 extends Node
 
 
+signal reload
+
 var primary = Color("404040")
 var secondary = Color("2a2a2a")
 var background = Color("1c1c1c")
@@ -47,9 +49,19 @@ func _input(event):
 				OS.get_screen_scale() * MAX_SCALE
 			)
 		else: return
-		get_tree().reload_current_scene()
+		emit_signal("reload")
 		_reload_theme()
 
-
+func grab_grabber(width, height):
+	width *= 0.25
+	height *= 0.5
+	if width <= 0 or height <= 0: return
+	var tex = ImageTexture.new()
+	var img = Image.new()
+	img.create(width, height, false, Image.FORMAT_RGBA8)
+	img.fill(secondary)
+	img.lock()
+	tex.create_from_image(img)
+	return tex
 
 
