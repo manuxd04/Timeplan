@@ -45,7 +45,7 @@ def CreateCanvas():
 #            W    H
 Img, File = CreateCanvas()
 Pos = [20,50]
-DisplayText = "Manddag"
+DisplayText = "Manda"
 TextColor = (0,200,0)
 AddText(Img, CanvazSize, DisplayText, TextColor, Pos, 50)
 for x in range(2,10):
