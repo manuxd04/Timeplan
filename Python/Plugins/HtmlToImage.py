@@ -1,10 +1,10 @@
 #https://pypi.org/project/html2image/
-from math import fabs, trunc
 import random
 import time
 import os
 from PIL import Image
 from html2image import Html2Image
+from math import fabs, trunc
 
 #Settings
 ##Website path
