@@ -1,0 +1,16 @@
+.Page_Title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: lightblue;
+}
+.Kalender_Container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: burlywood;
+    border: black;
+    height: 1000px;
+    width: 1000px;
+    margin: 0 auto;
+}
