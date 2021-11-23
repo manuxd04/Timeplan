@@ -1,0 +1,410 @@
+{
+    "canvas": {
+        "size": [1140,1018],
+        "style": {
+            "type": "flat",
+            "color": [42, 42, 42, 255],
+            "draw_center": true,
+            "border": {
+                "color": [0, 0, 0, 255],
+                "blend": false,
+                "width": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0
+                }
+            },
+            "corner": {
+                "detail": 8,
+                "radius": {
+                    "top_left": 0,
+                    "top_right": 0,
+                    "bottom_left": 0,
+                    "bottom_right": 0
+                }
+            },
+            "expand_margin": {
+                "top": 0,
+                "bottom": 0,
+                "left": 0,
+                "right": 0
+            },
+            "shadow": {
+                "color": [255, 255, 255, 255],
+                "size": 0,
+                "offset": [0, 0]
+            },
+            "anti_aliasing": 0
+        }
+    },
+    "cards": [
+        {
+            "id": 0,
+            "style": {
+                "type": "flat",
+                "color": [190, 255, 0, 255],
+                "draw_center": true,
+                "border": {
+                    "color": [0, 0, 0, 255],
+                    "blend": false,
+                    "width": {
+                        "top": 5,
+                        "bottom": 5,
+                        "left": 5,
+                        "right": 5
+                    }
+                },
+                "corner": {
+                    "detail": 8,
+                    "radius": {
+                        "top_left": 20,
+                        "top_right": 20,
+                        "bottom_left": 20,
+                        "bottom_right": 20
+                    }
+                },
+                "expand_margin": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0
+                },
+                "shadow": {
+                    "color": [255, 255, 255, 255],
+                    "size": 0,
+                    "offset": [0, 0]
+                },
+                "anti_aliasing": 0
+            },
+            "elements": []
+        },
+        {
+            "id": 1,
+            "style": {
+                "type": "flat",
+                "color": [146, 255, 255, 255],
+                "draw_center": true,
+                "border": {
+                    "color": [249, 255, 255, 255],
+                    "blend": true,
+                    "width": {
+                        "top": 60,
+                        "bottom": 0,
+                        "left": 5,
+                        "right": 5
+                    }
+                },
+                "corner": {
+                    "detail": 10,
+                    "radius": {
+                        "top_left": 20,
+                        "top_right": 20,
+                        "bottom_left": 20,
+                        "bottom_right": 20
+                    }
+                },
+                "expand_margin": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0
+                },
+                "shadow": {
+                    "color": [0, 0, 0, 101],
+                    "size": 3,
+                    "offset": [3, 3]
+                },
+                "anti_aliasing": 0.625
+            },
+            "elements": [
+                {
+                    "type": "text",
+                    "position": [0,0],
+                    "size": [200,100],
+                    "style": null,
+                    "anchor": {"top":0.0,"bottom":0.0,"left":1.0,"right":1.0},
+                    "align": ["center","center"],
+                    "font": "Roboto-Bold.ttf",
+                    "colour": [255,255,255,255],
+                    "text_size": 32,
+                    "text": "Math"
+                }
+            ]
+        }
+    ],
+    "elements": [
+        {
+            "type": "table",
+            "position": [0,0],
+            "size": [1140, 1018],
+            "anchor": {"top":0,"bottom":0,"left":0,"right":0},
+            "style": null,
+            "headers": {
+                "top": {
+                    "size": [1020,38],
+                    "separator": {
+                        "separation": 5,
+                        "style": {
+                            "type": "line",
+                            "vertical": false,
+                            "thickness": 4,
+                            "color": [64, 64, 64, 255],
+                            "expand_margin": {
+                                "begin": 22,
+                                "end": 0
+                            }
+                        }
+                    },
+                    "content": [
+                        {
+                            "style": null,
+                            "elements": [{
+                                "type": "text",
+                                "position": [0,0],
+                                "size": [200,38],
+                                "style": null,
+                                "anchor": {"top":0.0,"bottom":0.0,"left":1.0,"right":1.0},
+                                "align": ["center","center"],
+                                "font": "Roboto-Regular.ttf",
+                                "colour": [255,255,255,255],
+                                "text_size": 16,
+                                "text": "Monday"
+                            }]
+                        },
+                        {
+                            "style": null,
+                            "elements": [{
+                                "type": "text",
+                                "position": [0,0],
+                                "size": [200,38],
+                                "style": null,
+                                "anchor": {"top":0.0,"bottom":0.0,"left":1.0,"right":1.0},
+                                "align": ["center","center"],
+                                "font": "Roboto-Regular.ttf",
+                                "colour": [255,255,255,255],
+                                "text_size": 16,
+                                "text": "Tuesday"
+                            }]
+                        },
+                        {
+                            "style": null,
+                            "elements": [{
+                                "type": "text",
+                                "position": [0,0],
+                                "size": [200,38],
+                                "style": null,
+                                "anchor": {"top":0.0,"bottom":0.0,"left":1.0,"right":1.0},
+                                "align": ["center","center"],
+                                "font": "Roboto-Regular.ttf",
+                                "colour": [255,255,255,255],
+                                "text_size": 16,
+                                "text": "Wednesday"
+                            }]
+                        },
+                        {
+                            "style": null,
+                            "elements": [{
+                                "type": "text",
+                                "position": [0,0],
+                                "size": [200,38],
+                                "style": null,
+                                "anchor": {"top":0.0,"bottom":0.0,"left":1.0,"right":1.0},
+                                "align": ["center","center"],
+                                "font": "Roboto-Regular.ttf",
+                                "colour": [255,255,255,255],
+                                "text_size": 16,
+                                "text": "Thursday"
+                            }]
+                        },
+                        {
+                            "style": null,
+                            "elements": [{
+                                "type": "text",
+                                "position": [0,0],
+                                "size": [200,38],
+                                "style": null,
+                                "anchor": {"top":0.0,"bottom":0.0,"left":1.0,"right":1.0},
+                                "align": ["center","center"],
+                                "font": "Roboto-Regular.ttf",
+                                "colour": [255,255,255,255],
+                                "text_size": 16,
+                                "text": "Friday"
+                            }]
+                        }
+                    ]
+                },
+                "left": {
+                    "size": [80,940],
+                    "separator": {
+                        "separation": 5,
+                        "style": {
+                            "type": "line",
+                            "vertical": true,
+                            "thickness": 4,
+                            "color": [64, 64, 64, 255],
+                            "expand_margin": {
+                                "begin": 22,
+                                "end": 0
+                            }
+                        }
+                    },
+                    "content": [
+                        {
+                            "style": null,
+                            "elements": [{
+                                "type": "text",
+                                "position": [0,0],
+                                "size": [80,100],
+                                "style": null,
+                                "anchor": {"top":0.0,"bottom":0.0,"left":1.0,"right":1.0},
+                                "align": ["right","fill"],
+                                "font": "Roboto-Regular.ttf",
+                                "colour": [255,255,255,255],
+                                "text_size": 16,
+                                "text": "8:15"
+                            }]
+                        },
+                        {
+                            "style": null,
+                            "elements": [{
+                                "type": "text",
+                                "position": [0,0],
+                                "size": [80,100],
+                                "style": null,
+                                "anchor": {"top":0.0,"bottom":0.0,"left":1.0,"right":1.0},
+                                "align": ["right","fill"],
+                                "font": "Roboto-Regular.ttf",
+                                "colour": [255,255,255,255],
+                                "text_size": 16,
+                                "text": "9:00\n9:45"
+                            }]
+                        },
+                        {
+                            "style": null,
+                            "elements": [{
+                                "type": "text",
+                                "position": [0,0],
+                                "size": [80,100],
+                                "style": null,
+                                "anchor": {"top":0.0,"bottom":0.0,"left":1.0,"right":1.0},
+                                "align": ["right","fill"],
+                                "font": "Roboto-Regular.ttf",
+                                "colour": [255,255,255,255],
+                                "text_size": 16,
+                                "text": "10:00"
+                            }]
+                        },
+                        {
+                            "style": null,
+                            "elements": [{
+                                "type": "text",
+                                "position": [0,0],
+                                "size": [80,100],
+                                "style": null,
+                                "anchor": {"top":0.0,"bottom":0.0,"left":1.0,"right":1.0},
+                                "align": ["right","fill"],
+                                "font": "Roboto-Regular.ttf",
+                                "colour": [255,255,255,255],
+                                "text_size": 16,
+                                "text": "11:30"
+                            }]
+                        },
+                        {
+                            "style": null,
+                            "elements": [{
+                                "type": "text",
+                                "position": [0,0],
+                                "size": [80,100],
+                                "style": null,
+                                "anchor": {"top":0.0,"bottom":0.0,"left":1.0,"right":1.0},
+                                "align": ["right","fill"],
+                                "font": "Roboto-Regular.ttf",
+                                "colour": [255,255,255,255],
+                                "text_size": 16,
+                                "text": "12:15"
+                            }]
+                        },
+                        {
+                            "style": null,
+                            "elements": [{
+                                "type": "text",
+                                "position": [0,0],
+                                "size": [80,100],
+                                "style": null,
+                                "anchor": {"top":0.0,"bottom":0.0,"left":1.0,"right":1.0},
+                                "align": ["right","fill"],
+                                "font": "Roboto-Regular.ttf",
+                                "colour": [255,255,255,255],
+                                "text_size": 16,
+                                "text": "13:00\n13:45"
+                            }]
+                        },
+                        {
+                            "style": null,
+                            "elements": [{
+                                "type": "text",
+                                "position": [0,0],
+                                "size": [80,100],
+                                "style": null,
+                                "anchor": {"top":0.0,"bottom":0.0,"left":1.0,"right":1.0},
+                                "align": ["right","fill"],
+                                "font": "Roboto-Regular.ttf",
+                                "colour": [255,255,255,255],
+                                "text_size": 16,
+                                "text": "14:00"
+                            }]
+                        },
+                        {
+                            "style": null,
+                            "elements": [{
+                                "type": "text",
+                                "position": [0,0],
+                                "size": [80,100],
+                                "style": null,
+                                "anchor": {"top":0.0,"bottom":0.0,"left":1.0,"right":1.0},
+                                "align": ["right","fill"],
+                                "font": "Roboto-Regular.ttf",
+                                "colour": [255,255,255,255],
+                                "text_size": 16,
+                                "text": "14:45\n15:30"
+                            }]
+                        }
+                    ]
+                }
+            },
+            "grid": {
+                "tiles": [5,9],
+                "tile_size": [200,100],
+                "separation": [5,5],
+                "style": null,
+                "content": [
+                    {
+                        "id": 0,
+                        "position": [0,0]
+                    },
+                    {
+                        "id": 0,
+                        "position": [0,1]
+                    },
+                    {
+                        "id": 1,
+                        "position": [1,0]
+                    },
+                    {
+                        "id": 0,
+                        "position": [2,0]
+                    },
+                    {
+                        "id": 0,
+                        "position": [3,0]
+                    },
+                    {
+                        "id": 0,
+                        "position": [4,0]
+                    }
+                ]
+            }
+        }
+    ]
+}
