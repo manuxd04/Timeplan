@@ -101,15 +101,16 @@ with open(JsonPath, "r") as f:
     #Body
     with doc.body:
         #Title
-        h1('Tabell').set_attribute('class','Page_Title')
+        #Table = h1('Tabell').set_attribute('class','Page_Title')
         #KalenderBox
-        div().set_attribute("class", "Kalender_Container")    
+        #div().set_attribute("class", "Kalender_Container")  
         #Create boxes
-        for Element_Card in Json["elements"][0]["grid"]["content"]:
-            Card_Id = Element_Card["id"]
-            Card_Pos = Element_Card["pos"]
-            print(Card_Id, Card_Pos)
-            #div().set_attribute("class", "Card")  
+        with div(id='Kalender_Container'):
+            for Element_Card in Json["elements"][0]["grid"]["content"]:
+                Card_Id = Element_Card["id"]
+                Card_Pos = Element_Card["position"]
+                print(Card_Id, Card_Pos)
+                div().set_attribute("id", Card_Id)  
 #Export
 FilePath = SavePath + "/index.html"
 #Format
