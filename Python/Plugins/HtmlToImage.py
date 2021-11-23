@@ -8,7 +8,7 @@ from math import fabs, trunc
 
 #Settings
 ##Website path
-Url = 'https://mon.ruter.no/departures/59.918991000000005-10.753255000000001'
+Url = 'https://elvebakken.vgs.no/'
 Output = '/Users/johannes/Desktop/Python-Kalender-Prosjekt/Timeplan/Python/Plugins/my_screenshot_folder'
 CustomeSize = False
 LoadTime = False
