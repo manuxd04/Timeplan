@@ -1,90 +1,141 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>
-        Html_export
-    </title>
-    <style>
-        body {
-            height: 1140px;
-            width: 1018px;
-            background-color: rgba(42, 42, 42, 1.0);
-        }
-        
-        border {
-            background-color: rgba(0, 0, 0, 1.0);
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-        
-        corner {
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-        
-        expand_margin {
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-        
-        shadow {
-            background-color: rgba(255, 255, 255, 1.0);
-            size: 0;
-            offset: 0px 0px;
-        }
-        
-        border {
-            background-color: rgba(0, 0, 0, 1.0);
-            top: 5;
-            bottom: 5;
-            left: 5;
-            right: 5;
-        }
-        
-        corner {
-            border-top-left-radius: 20;
-            border-top-right-radius: 20;
-            border-bottom-left-radius: 20;
-            border-bottom-right-radius: 20;
-        }
-        
-        expand_margin {
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-        
-        shadow {
-            background-color: rgba(255, 255, 255, 1.0);
-            size: 0;
-            offset: 0px 0px;
-        }
-    </style>
-</head>
-
-<body>
-    <div id="Kalender_Container">
-        <div id="0">
-        </div>
-        <div id="0">
-        </div>
-        <div id="1">
-        </div>
-        <div id="0">
-        </div>
-        <div id="0">
-        </div>
-        <div id="0">
-        </div>
-    </div>
-</body>
-
+ <head>
+  <title>
+   Html_export
+  </title>
+  <link href="../Css/style.css" rel="stylesheet"/>
+  <style>
+   [id='0']{
+background-color: rgba(190, 255, 0, 1.0);
+}
+  </style>
+  <style>
+   [id='1']{
+background-color: rgba(146, 255, 255, 1.0);
+}
+  </style>
+ </head>
+ <body>
+  <p class="announcement">
+   JSON - HTML/CSS CONVERTERER
+  </p>
+  <p class="announcement">
+   Credits : Johannes
+  </p>
+  <p class="Title">
+   Timeplan
+  </p>
+  <div class="Kalender_Container">
+   <div class="Wich_Day" style="                    grid-column:1 / 2;
+                    grid-row:1 / 2;
+                ">
+    <p>
+     Monday
+    </p>
+   </div>
+   <div class="Wich_Day" style="                    grid-column:2 / 3;
+                    grid-row:1 / 2;
+                ">
+    <p>
+     Tuesday
+    </p>
+   </div>
+   <div class="Wich_Day" style="                    grid-column:3 / 4;
+                    grid-row:1 / 2;
+                ">
+    <p>
+     Wednesday
+    </p>
+   </div>
+   <div class="Wich_Day" style="                    grid-column:4 / 5;
+                    grid-row:1 / 2;
+                ">
+    <p>
+     Thursday
+    </p>
+   </div>
+   <div class="Wich_Day" style="                    grid-column:5 / 6;
+                    grid-row:1 / 2;
+                ">
+    <p>
+     Friday
+    </p>
+   </div>
+   <div class="Spacing" style="                grid-column:1 / 6;
+                grid-row:2 / 3;
+            ">
+   </div>
+   <div class="Card" id="0" style="                    grid-column:1 / 2;
+                    grid-row:3 / 4;
+                ">
+    <p>
+     _
+    </p>
+   </div>
+   <div class="Card" id="0" style="                    grid-column:2 / 3;
+                    grid-row:3 / 4;
+                ">
+    <p>
+     _
+    </p>
+   </div>
+   <div class="Card" id="1" style="                    grid-column:1 / 2;
+                    grid-row:4 / 5;
+                ">
+    <p>
+     Math
+    </p>
+   </div>
+   <div class="Card" id="0" style="                    grid-column:1 / 2;
+                    grid-row:5 / 6;
+                ">
+    <p>
+     _
+    </p>
+   </div>
+   <div class="Card" id="0" style="                    grid-column:1 / 2;
+                    grid-row:6 / 7;
+                ">
+    <p>
+     _
+    </p>
+   </div>
+   <div class="Card" id="0" style="                    grid-column:1 / 2;
+                    grid-row:7 / 8;
+                ">
+    <p>
+     _
+    </p>
+   </div>
+   <div class="Card" id="0" style="                    grid-column:2 / 3;
+                    grid-row:7 / 8;
+                ">
+    <p>
+     _
+    </p>
+   </div>
+   <div class="Card" id="0" style="                    grid-column:3 / 4;
+                    grid-row:7 / 8;
+                ">
+    <p>
+     _
+    </p>
+   </div>
+   <div class="Card" id="0" style="                    grid-column:4 / 5;
+                    grid-row:7 / 8;
+                ">
+    <p>
+     _
+    </p>
+   </div>
+   <div class="Card" id="1" style="                    grid-column:5 / 6;
+                    grid-row:7 / 8;
+                ">
+    <p>
+     Math
+    </p>
+   </div>
+  </div>
+ </body>
 </html>

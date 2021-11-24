@@ -402,6 +402,22 @@
                     {
                         "id": 0,
                         "position": [4,0]
+                    },
+                    {
+                        "id": 0,
+                        "position": [4,1]
+                    },
+                    {
+                        "id": 0,
+                        "position": [4,2]
+                    },
+                    {
+                        "id": 0,
+                        "position": [4,3]
+                    },
+                    {
+                        "id": 1,
+                        "position": [4,4]
                     }
                 ]
             }
