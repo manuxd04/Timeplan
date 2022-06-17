@@ -77,3 +77,10 @@ func dict2style(dict):
 	
 	if dict["type"] == "texture":
 		pass
+
+
+
+
+
+
+

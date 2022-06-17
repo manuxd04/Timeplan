@@ -12,6 +12,9 @@ onready var bg = get_node("Vertical/Horizontal/Content")
 func _ready():
 	set_color(bg_color)
 	_on_Content_resized()
+	theme = ThemeHandler.theme
+	yield(VisualServer, "frame_post_draw")
+	print(rect_size)
 
 func set_color(new_col):
 	bg_color = new_col
@@ -44,4 +47,13 @@ func _on_Content_resized():
 		style = bg.get("custom_styles/panel")
 		style.region_rect = Rect2(Vector2(),bg.rect_size*texture_scale)
 		bg.set("custom_styles/panel", style)
+
+
+
+
+
+
+
+
+
 

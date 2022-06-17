@@ -51,6 +51,7 @@ border_width_right = 3
 border_color = Color( 0.109804, 0.109804, 0.109804, 1 )
 
 [sub_resource type="DynamicFont" id=7]
+size = 32
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )

@@ -1,24 +1,96 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Main/Table/Table.gd" type="Script" id=1]
+[ext_resource path="res://Global/Classes/GridPanel.gd" type="Script" id=2]
+[ext_resource path="res://Theme/Theme.tres" type="Theme" id=3]
+[ext_resource path="res://Theme/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Test/Bold.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Test/green.tres" type="StyleBox" id=6]
+[ext_resource path="res://Test/blue.tres" type="StyleBox" id=7]
+[ext_resource path="res://Test/yellow.tres" type="StyleBox" id=8]
+[ext_resource path="res://Test/middle.tres" type="StyleBox" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
+[sub_resource type="StyleBoxEmpty" id=7]
+
 [sub_resource type="StyleBoxLine" id=2]
 color = Color( 0.25098, 0.25098, 0.25098, 1 )
-grow_begin = -19.0
+grow_begin = -98.0
 grow_end = 0.0
-thickness = 2
+thickness = 4
 
 [sub_resource type="StyleBoxLine" id=3]
 color = Color( 0.25098, 0.25098, 0.25098, 1 )
-grow_begin = 0.0
+grow_begin = 22.0
 grow_end = 0.0
-thickness = 2
+thickness = 4
 vertical = true
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=27]
 bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 0.768627, 1, 0.843137, 1 )
+border_width_left = 10
+border_width_top = 60
+border_width_right = 10
+border_color = Color( 0.760784, 1, 0.498039, 1 )
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0.572549, 1, 1 )
+border_width_left = 5
+border_width_top = 60
+border_width_right = 5
+border_color = Color( 0, 0.976471, 1, 1 )
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+shadow_color = Color( 0, 0, 0, 0.396078 )
+shadow_size = 3
+shadow_offset = Vector2( 3, 3 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 32
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
 
 [node name="Table" type="PanelContainer"]
 anchor_right = 1.0
@@ -26,6 +98,7 @@ anchor_bottom = 1.0
 rect_scale = Vector2( 0.5, 0.5 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 3 )
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -33,9 +106,8 @@ __meta__ = {
 }
 
 [node name="Vertical" type="VBoxContainer" parent="."]
-visible = false
-margin_right = 1056.0
-margin_bottom = 640.0
+margin_right = 1640.0
+margin_bottom = 1018.0
 size_flags_horizontal = 0
 custom_constants/separation = 0
 __meta__ = {
@@ -43,187 +115,1614 @@ __meta__ = {
 }
 
 [node name="Top" type="HBoxContainer" parent="Vertical"]
-margin_right = 1056.0
+margin_right = 1640.0
+margin_bottom = 38.0
+custom_constants/separation = 0
+
+[node name="VSeparator" type="VSeparator" parent="Vertical/Top"]
+margin_right = 120.0
+margin_bottom = 38.0
+custom_constants/separation = 120
+custom_styles/separator = SubResource( 7 )
+
+[node name="Content" type="HBoxContainer" parent="Vertical/Top"]
+margin_left = 120.0
+margin_right = 1640.0
+margin_bottom = 38.0
+custom_constants/separation = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="Label" parent="Vertical/Top/Content"]
+margin_right = 300.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 300, 0 )
+text = "Mandag"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="Label" parent="Vertical/Top/Content"]
+margin_left = 305.0
+margin_right = 605.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 300, 0 )
+text = "Tirsdag"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="Label" parent="Vertical/Top/Content"]
+margin_left = 610.0
+margin_right = 910.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 300, 0 )
+text = "Onsdag"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="Label" parent="Vertical/Top/Content"]
+margin_left = 915.0
+margin_right = 1215.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 300, 0 )
+text = "Torsdag"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5" type="Label" parent="Vertical/Top/Content"]
+margin_left = 1220.0
+margin_right = 1520.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 300, 0 )
+text = "Fredag"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Separator" type="HSeparator" parent="Vertical"]
-margin_right = 1056.0
-margin_bottom = 20.0
+margin_top = 38.0
+margin_right = 1640.0
+margin_bottom = 78.0
+custom_constants/separation = 40
 custom_styles/separator = SubResource( 2 )
-custom_constants/separation = 20
 
 [node name="Horizontal" type="HBoxContainer" parent="Vertical"]
-margin_top = 20.0
-margin_right = 1056.0
-margin_bottom = 640.0
+margin_top = 78.0
+margin_right = 1640.0
+margin_bottom = 1018.0
 custom_constants/separation = 0
 
 [node name="Side" type="VBoxContainer" parent="Vertical/Horizontal"]
-margin_bottom = 620.0
+margin_right = 80.0
+margin_bottom = 940.0
+custom_constants/separation = 5
+
+[node name="1" type="Label" parent="Vertical/Horizontal/Side"]
+margin_right = 80.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+text = "8:15"
+align = 2
+valign = 3
+
+[node name="2" type="Label" parent="Vertical/Horizontal/Side"]
+margin_top = 105.0
+margin_right = 80.0
+margin_bottom = 205.0
+rect_min_size = Vector2( 0, 100 )
+text = "9:00
+9:45"
+align = 2
+valign = 3
+
+[node name="3" type="Label" parent="Vertical/Horizontal/Side"]
+margin_top = 210.0
+margin_right = 80.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 0, 100 )
+text = "10:00"
+align = 2
+valign = 3
+
+[node name="4" type="Label" parent="Vertical/Horizontal/Side"]
+margin_top = 315.0
+margin_right = 80.0
+margin_bottom = 415.0
+rect_min_size = Vector2( 0, 100 )
+text = "10:45"
+align = 2
+valign = 3
+
+[node name="5" type="Label" parent="Vertical/Horizontal/Side"]
+margin_top = 420.0
+margin_right = 80.0
+margin_bottom = 520.0
+rect_min_size = Vector2( 0, 100 )
+text = "11:30"
+align = 2
+valign = 3
+
+[node name="6" type="Label" parent="Vertical/Horizontal/Side"]
+margin_top = 525.0
+margin_right = 80.0
+margin_bottom = 625.0
+rect_min_size = Vector2( 0, 100 )
+text = "12:15"
+align = 2
+valign = 3
+
+[node name="7" type="Label" parent="Vertical/Horizontal/Side"]
+margin_top = 630.0
+margin_right = 80.0
+margin_bottom = 730.0
+rect_min_size = Vector2( 0, 100 )
+text = "13:00
+13:45"
+align = 2
+valign = 3
+
+[node name="8" type="Label" parent="Vertical/Horizontal/Side"]
+margin_top = 735.0
+margin_right = 80.0
+margin_bottom = 835.0
+rect_min_size = Vector2( 0, 100 )
+text = "14:00"
+align = 2
+valign = 3
+
+[node name="9" type="Label" parent="Vertical/Horizontal/Side"]
+margin_top = 840.0
+margin_right = 80.0
+margin_bottom = 940.0
+rect_min_size = Vector2( 0, 100 )
+text = "14:45
+15:30"
+align = 2
+valign = 3
 
 [node name="Separator" type="VSeparator" parent="Vertical/Horizontal"]
-margin_right = 20.0
-margin_bottom = 620.0
+margin_left = 80.0
+margin_right = 120.0
+margin_bottom = 940.0
+custom_constants/separation = 40
 custom_styles/separator = SubResource( 3 )
-custom_constants/separation = 20
 
 [node name="Content" type="PanelContainer" parent="Vertical/Horizontal"]
-margin_left = 20.0
-margin_right = 1056.0
-margin_bottom = 620.0
-custom_styles/panel = SubResource( 4 )
+margin_left = 120.0
+margin_right = 1640.0
+margin_bottom = 940.0
+custom_styles/panel = SubResource( 27 )
 
 [node name="Columns" type="HBoxContainer" parent="Vertical/Horizontal/Content"]
-margin_right = 1036.0
-margin_bottom = 620.0
+margin_right = 1520.0
+margin_bottom = 940.0
+custom_constants/separation = 5
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="1" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
-margin_right = 100.0
-margin_bottom = 620.0
+margin_right = 300.0
+margin_bottom = 940.0
+rect_min_size = Vector2( 300, 0 )
+custom_constants/separation = 5
 
 [node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
-margin_right = 100.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+visible = false
+margin_right = 300.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 300, 310 )
+custom_styles/panel = ExtResource( 6 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/1/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Vertical/Horizontal/Content/Columns/1/Panel/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 153.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Prosjektarbeid"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Vertical/Horizontal/Content/Columns/1/Panel/VBoxContainer"]
+margin_top = 157.0
+margin_right = 300.0
+margin_bottom = 310.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Madeleine
+Arthur"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel2" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
-margin_top = 104.0
-margin_right = 100.0
-margin_bottom = 204.0
-rect_min_size = Vector2( 100, 100 )
+visible = false
+margin_top = 315.0
+margin_right = 300.0
+margin_bottom = 415.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 28 )
+script = ExtResource( 2 )
+is_empty = false
 
-[node name="Panel5" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
-margin_top = 208.0
-margin_right = 100.0
-margin_bottom = 308.0
-rect_min_size = Vector2( 100, 100 )
-
-[node name="Panel6" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
-margin_top = 312.0
-margin_right = 100.0
-margin_bottom = 412.0
-rect_min_size = Vector2( 100, 100 )
+[node name="Label" type="Label" parent="Vertical/Horizontal/Content/Columns/1/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Basismøte"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel3" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
-margin_top = 416.0
-margin_right = 100.0
-margin_bottom = 516.0
-rect_min_size = Vector2( 100, 100 )
+visible = false
+margin_top = 420.0
+margin_right = 300.0
+margin_bottom = 520.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = ExtResource( 9 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Vertical/Horizontal/Content/Columns/1/Panel3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "L"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel4" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
-margin_top = 520.0
-margin_right = 100.0
-margin_bottom = 620.0
-rect_min_size = Vector2( 100, 100 )
+visible = false
+margin_top = 525.0
+margin_right = 300.0
+margin_bottom = 730.0
+rect_min_size = Vector2( 300, 205 )
+custom_styles/panel = ExtResource( 8 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/1/Panel4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Vertical/Horizontal/Content/Columns/1/Panel4/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "YFF"
+align = 1
+valign = 2
+
+[node name="Label2" type="Label" parent="Vertical/Horizontal/Content/Columns/1/Panel4/VBoxContainer"]
+margin_top = 104.0
+margin_right = 300.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Fredrik"
+align = 1
+
+[node name="Panel5" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+visible = false
+margin_top = 735.0
+margin_right = 300.0
+margin_bottom = 940.0
+rect_min_size = Vector2( 300, 205 )
+custom_styles/panel = ExtResource( 7 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/1/Panel5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Vertical/Horizontal/Content/Columns/1/Panel5/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Norsk"
+align = 1
+valign = 2
+
+[node name="Label4" type="Label" parent="Vertical/Horizontal/Content/Columns/1/Panel5/VBoxContainer"]
+margin_top = 69.0
+margin_right = 300.0
+margin_bottom = 135.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Vibeke"
+align = 1
+
+[node name="Label5" type="Label" parent="Vertical/Horizontal/Content/Columns/1/Panel5/VBoxContainer"]
+margin_top = 139.0
+margin_right = 300.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "BLÅ BASE"
+align = 1
+
+[node name="Panel6" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel7" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+margin_top = 105.0
+margin_right = 300.0
+margin_bottom = 205.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel8" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+margin_top = 210.0
+margin_right = 300.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel9" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+margin_top = 315.0
+margin_right = 300.0
+margin_bottom = 415.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel10" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+margin_top = 420.0
+margin_right = 300.0
+margin_bottom = 520.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel11" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+margin_top = 525.0
+margin_right = 300.0
+margin_bottom = 625.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel12" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+margin_top = 630.0
+margin_right = 300.0
+margin_bottom = 730.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel13" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+margin_top = 735.0
+margin_right = 300.0
+margin_bottom = 835.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel14" type="Panel" parent="Vertical/Horizontal/Content/Columns/1"]
+margin_top = 840.0
+margin_right = 300.0
+margin_bottom = 940.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
 
 [node name="2" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
-margin_left = 104.0
-margin_right = 204.0
-margin_bottom = 620.0
+margin_left = 305.0
+margin_right = 605.0
+margin_bottom = 940.0
+rect_min_size = Vector2( 300, 0 )
+custom_constants/separation = 5
 
 [node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
-margin_right = 100.0
+visible = false
+margin_right = 300.0
 margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 9 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="Label" type="Label" parent="Vertical/Horizontal/Content/Columns/2/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+text = "Math"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
+visible = false
+margin_right = 300.0
+margin_bottom = 205.0
+rect_min_size = Vector2( 300, 205 )
+custom_styles/panel = ExtResource( 8 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/2/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/2/Panel2/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "YFF"
+align = 1
+valign = 2
+
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/2/Panel2/VBoxContainer"]
+margin_top = 104.0
+margin_right = 300.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Madeleine"
+align = 1
+
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/2/Panel2/VBoxContainer"]
+visible = false
+margin_top = 136.0
+margin_right = 300.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "C"
+align = 1
+
+[node name="Panel10" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
+visible = false
+margin_top = 210.0
+margin_right = 300.0
+margin_bottom = 415.0
+rect_min_size = Vector2( 300, 205 )
+custom_styles/panel = ExtResource( 6 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/2/Panel10"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/2/Panel10/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "KURS"
+align = 1
+valign = 2
+
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/2/Panel10/VBoxContainer"]
+margin_top = 104.0
+margin_right = 300.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Fredrik + Arthur"
+align = 1
+
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/2/Panel10/VBoxContainer"]
+visible = false
+margin_top = 136.0
+margin_right = 300.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "C"
+align = 1
+
+[node name="Panel3" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
+visible = false
+margin_top = 420.0
+margin_right = 300.0
+margin_bottom = 520.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = ExtResource( 9 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Vertical/Horizontal/Content/Columns/2/Panel3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "U"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
+visible = false
+margin_top = 525.0
+margin_right = 300.0
+margin_bottom = 730.0
+rect_min_size = Vector2( 300, 205 )
+custom_styles/panel = ExtResource( 6 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/2/Time"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/2/Time/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Prosjektarbeid"
+align = 1
+valign = 2
+
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/2/Time/VBoxContainer"]
+margin_top = 104.0
+margin_right = 300.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Fredrik + Madeleine"
+align = 1
+
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/2/Time/VBoxContainer"]
+visible = false
+margin_top = 143.0
+margin_right = 300.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "C"
+align = 1
+
+[node name="Time2" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
+visible = false
+margin_top = 735.0
+margin_right = 300.0
+margin_bottom = 935.0
+rect_min_size = Vector2( 300, 200 )
+custom_styles/panel = SubResource( 15 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/2/Time2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/2/Time2/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 98.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Prosjektarbeid"
+align = 1
+valign = 2
+
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/2/Time2/VBoxContainer"]
+margin_top = 102.0
+margin_right = 300.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Fredrik + Madeleine"
+align = 1
+
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/2/Time2/VBoxContainer"]
+visible = false
+margin_top = 143.0
+margin_right = 300.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "C"
+align = 1
+
+[node name="Panel4" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel5" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
+margin_top = 105.0
+margin_right = 300.0
+margin_bottom = 205.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel6" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
+margin_top = 210.0
+margin_right = 300.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel7" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
+margin_top = 315.0
+margin_right = 300.0
+margin_bottom = 415.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel8" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
+margin_top = 420.0
+margin_right = 300.0
+margin_bottom = 520.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel9" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
+margin_top = 525.0
+margin_right = 300.0
+margin_bottom = 625.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel11" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
+margin_top = 630.0
+margin_right = 300.0
+margin_bottom = 730.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel12" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
+margin_top = 735.0
+margin_right = 300.0
+margin_bottom = 835.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel13" type="Panel" parent="Vertical/Horizontal/Content/Columns/2"]
+margin_top = 840.0
+margin_right = 300.0
+margin_bottom = 940.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
 
 [node name="3" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
-margin_left = 208.0
-margin_right = 308.0
-margin_bottom = 620.0
+margin_left = 610.0
+margin_right = 910.0
+margin_bottom = 940.0
+rect_min_size = Vector2( 300, 0 )
+custom_constants/separation = 5
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
-margin_right = 100.0
+[node name="Time2" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
+visible = false
+margin_right = 300.0
+margin_bottom = 205.0
+rect_min_size = Vector2( 300, 205 )
+custom_styles/panel = ExtResource( 6 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/3/Time2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/3/Time2/VBoxContainer"]
+margin_right = 300.0
 margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "KURS"
+align = 1
+valign = 2
+
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/3/Time2/VBoxContainer"]
+margin_top = 104.0
+margin_right = 300.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Andreas + Fredrik"
+align = 1
+
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/3/Time2/VBoxContainer"]
+visible = false
+margin_top = 136.0
+margin_right = 300.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "C"
+align = 1
+
+[node name="Time3" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
+visible = false
+margin_top = 210.0
+margin_right = 300.0
+margin_bottom = 415.0
+rect_min_size = Vector2( 300, 205 )
+custom_styles/panel = ExtResource( 6 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/3/Time3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/3/Time3/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Prosjektarbeid"
+align = 1
+valign = 2
+
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/3/Time3/VBoxContainer"]
+margin_top = 104.0
+margin_right = 300.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Andreas + Fredrik"
+align = 1
+
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/3/Time3/VBoxContainer"]
+visible = false
+margin_top = 136.0
+margin_right = 300.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "C"
+align = 1
 
 [node name="Panel2" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
-margin_top = 104.0
-margin_right = 100.0
-margin_bottom = 204.0
-rect_min_size = Vector2( 100, 100 )
+visible = false
+margin_top = 420.0
+margin_right = 300.0
+margin_bottom = 520.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = ExtResource( 9 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Vertical/Horizontal/Content/Columns/3/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "N"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time4" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
+visible = false
+margin_top = 525.0
+margin_right = 300.0
+margin_bottom = 625.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = ExtResource( 6 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/3/Time4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/3/Time4/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Prosjektarbeid"
+align = 1
+valign = 1
+
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/3/Time4/VBoxContainer"]
+visible = false
+margin_top = 68.0
+margin_right = 300.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "B"
+align = 1
+
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/3/Time4/VBoxContainer"]
+visible = false
+margin_top = 102.0
+margin_right = 300.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "C"
+align = 1
+
+[node name="Time5" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
+visible = false
+margin_top = 630.0
+margin_right = 300.0
+margin_bottom = 940.0
+rect_min_size = Vector2( 300, 310 )
+custom_styles/panel = ExtResource( 8 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/3/Time5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/3/Time5/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 153.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "YFF"
+align = 1
+valign = 2
+
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/3/Time5/VBoxContainer"]
+margin_top = 157.0
+margin_right = 300.0
+margin_bottom = 310.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Arthur"
+align = 1
+
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/3/Time5/VBoxContainer"]
+visible = false
+margin_top = 136.0
+margin_right = 300.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "C"
+align = 1
+
+[node name="Panel3" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel4" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
+margin_top = 105.0
+margin_right = 300.0
+margin_bottom = 205.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel5" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
+margin_top = 210.0
+margin_right = 300.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel6" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
+margin_top = 315.0
+margin_right = 300.0
+margin_bottom = 415.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel7" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
+margin_top = 420.0
+margin_right = 300.0
+margin_bottom = 520.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel8" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
+margin_top = 525.0
+margin_right = 300.0
+margin_bottom = 625.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel9" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
+margin_top = 630.0
+margin_right = 300.0
+margin_bottom = 730.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel10" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
+margin_top = 735.0
+margin_right = 300.0
+margin_bottom = 835.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel11" type="Panel" parent="Vertical/Horizontal/Content/Columns/3"]
+margin_top = 840.0
+margin_right = 300.0
+margin_bottom = 940.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
 
 [node name="4" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
-margin_left = 312.0
-margin_right = 412.0
-margin_bottom = 620.0
-
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
-margin_right = 100.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+margin_left = 915.0
+margin_right = 1215.0
+margin_bottom = 940.0
+rect_min_size = Vector2( 300, 0 )
+custom_constants/separation = 5
 
 [node name="Panel2" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
-margin_top = 104.0
-margin_right = 100.0
-margin_bottom = 204.0
-rect_min_size = Vector2( 100, 100 )
+visible = false
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
 
 [node name="Panel3" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
-margin_top = 208.0
-margin_right = 100.0
-margin_bottom = 308.0
-rect_min_size = Vector2( 100, 100 )
+visible = false
+margin_top = 105.0
+margin_right = 300.0
+margin_bottom = 205.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Time3" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+visible = false
+margin_right = 300.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 300, 200 )
+custom_styles/panel = SubResource( 16 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/4/Time3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/4/Time3/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "A"
+align = 1
+valign = 2
+
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/4/Time3/VBoxContainer"]
+margin_top = 68.0
+margin_right = 300.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "B"
+align = 1
+
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/4/Time3/VBoxContainer"]
+margin_top = 136.0
+margin_right = 300.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "C"
+align = 1
+
+[node name="Time5" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+visible = false
+margin_top = 210.0
+margin_right = 300.0
+margin_bottom = 415.0
+rect_min_size = Vector2( 300, 205 )
+custom_styles/panel = ExtResource( 7 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/4/Time5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/4/Time5/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Gym"
+align = 1
+valign = 2
+
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/4/Time5/VBoxContainer"]
+margin_top = 69.0
+margin_right = 300.0
+margin_bottom = 135.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Trygve"
+align = 1
+
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/4/Time5/VBoxContainer"]
+margin_top = 139.0
+margin_right = 300.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "VULK1"
+align = 1
+
+[node name="Panel4" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+visible = false
+margin_top = 420.0
+margin_right = 300.0
+margin_bottom = 520.0
+rect_min_size = Vector2( 200, 100 )
+rect_pivot_offset = Vector2( -365.172, 325.629 )
+custom_styles/panel = ExtResource( 9 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Vertical/Horizontal/Content/Columns/4/Panel4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "S"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time4" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+visible = false
+margin_top = 525.0
+margin_right = 300.0
+margin_bottom = 835.0
+rect_min_size = Vector2( 300, 310 )
+custom_styles/panel = ExtResource( 7 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/4/Time4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/4/Time4/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Samfunnsfag"
+align = 1
+valign = 2
+
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/4/Time4/VBoxContainer"]
+margin_top = 104.0
+margin_right = 300.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Amalie"
+align = 1
+
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/4/Time4/VBoxContainer"]
+margin_top = 209.0
+margin_right = 300.0
+margin_bottom = 310.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "BLÅ BASE"
+align = 1
+
+[node name="Time6" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+visible = false
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 17 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/4/Time6"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/4/Time6/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Samfunnsfag"
+align = 1
+valign = 2
+
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/4/Time6/VBoxContainer"]
+margin_top = 68.0
+margin_right = 300.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Amalie"
+align = 1
+
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/4/Time6/VBoxContainer"]
+margin_top = 136.0
+margin_right = 300.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "BLÅ BASE"
+align = 1
+
+[node name="Panel5" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel6" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+margin_top = 105.0
+margin_right = 300.0
+margin_bottom = 205.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel7" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+margin_top = 210.0
+margin_right = 300.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel8" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+margin_top = 315.0
+margin_right = 300.0
+margin_bottom = 415.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel9" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+margin_top = 420.0
+margin_right = 300.0
+margin_bottom = 520.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel10" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+margin_top = 525.0
+margin_right = 300.0
+margin_bottom = 625.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel11" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+margin_top = 630.0
+margin_right = 300.0
+margin_bottom = 730.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel12" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+margin_top = 735.0
+margin_right = 300.0
+margin_bottom = 835.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Panel13" type="Panel" parent="Vertical/Horizontal/Content/Columns/4"]
+margin_top = 840.0
+margin_right = 300.0
+margin_bottom = 940.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
 
 [node name="5" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
-margin_left = 416.0
-margin_right = 516.0
-margin_bottom = 620.0
+margin_left = 1220.0
+margin_right = 1520.0
+margin_bottom = 940.0
+rect_min_size = Vector2( 300, 0 )
+custom_constants/separation = 5
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
-margin_right = 100.0
+[node name="Time4" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
+visible = false
+margin_right = 300.0
+margin_bottom = 205.0
+rect_min_size = Vector2( 300, 205 )
+custom_styles/panel = ExtResource( 8 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/5/Time4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/5/Time4/VBoxContainer"]
+margin_right = 300.0
 margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Ola's hjørne"
+align = 1
+valign = 2
 
-[node name="6" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
-margin_left = 520.0
-margin_right = 620.0
-margin_bottom = 620.0
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/5/Time4/VBoxContainer"]
+visible = false
+margin_top = 68.0
+margin_right = 300.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "B"
+align = 1
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/6"]
-margin_right = 100.0
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/5/Time4/VBoxContainer"]
+margin_top = 104.0
+margin_right = 300.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "BLÅ BASE"
+align = 1
+valign = 1
+
+[node name="Time5" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
+visible = false
+margin_top = 210.0
+margin_right = 300.0
+margin_bottom = 415.0
+rect_min_size = Vector2( 300, 205 )
+custom_styles/panel = ExtResource( 7 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/5/Time5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/5/Time5/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Norsk"
+align = 1
+valign = 2
+
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/5/Time5/VBoxContainer"]
+margin_top = 69.0
+margin_right = 300.0
+margin_bottom = 135.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Vibeke"
+align = 1
+
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/5/Time5/VBoxContainer"]
+margin_top = 139.0
+margin_right = 300.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "BLÅ BASE"
+align = 1
+
+[node name="Panel2" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
+visible = false
+margin_top = 420.0
+margin_right = 300.0
+margin_bottom = 520.0
+rect_min_size = Vector2( 200, 100 )
+rect_pivot_offset = Vector2( -649.893, 94.9116 )
+custom_styles/panel = SubResource( 19 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Vertical/Horizontal/Content/Columns/5/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "J"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time6" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
+visible = false
+margin_top = 525.0
+margin_right = 300.0
+margin_bottom = 940.0
+rect_min_size = Vector2( 300, 415 )
+custom_styles/panel = ExtResource( 6 )
+script = ExtResource( 2 )
+is_empty = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns/5/Time6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Vertical/Horizontal/Content/Columns/5/Time6/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Interessegrupper"
+align = 1
+valign = 2
+
+[node name="Label7" type="Label" parent="Vertical/Horizontal/Content/Columns/5/Time6/VBoxContainer"]
+margin_top = 209.0
+margin_right = 300.0
+margin_bottom = 415.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Egen plan"
+align = 1
+
+[node name="Label8" type="Label" parent="Vertical/Horizontal/Content/Columns/5/Time6/VBoxContainer"]
+visible = false
+margin_top = 136.0
+margin_right = 300.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "C"
+align = 1
+
+[node name="Panel3" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
+margin_right = 300.0
 margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
 
-[node name="7" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
-margin_left = 624.0
-margin_right = 724.0
-margin_bottom = 620.0
+[node name="Panel4" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
+margin_top = 105.0
+margin_right = 300.0
+margin_bottom = 205.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/7"]
-margin_right = 100.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+[node name="Panel5" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
+margin_top = 210.0
+margin_right = 300.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
 
-[node name="8" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
-margin_left = 728.0
-margin_right = 828.0
-margin_bottom = 620.0
+[node name="Panel6" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
+margin_top = 315.0
+margin_right = 300.0
+margin_bottom = 415.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/8"]
-margin_right = 100.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+[node name="Panel7" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
+margin_top = 420.0
+margin_right = 300.0
+margin_bottom = 520.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
 
-[node name="9" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
-margin_left = 832.0
-margin_right = 932.0
-margin_bottom = 620.0
+[node name="Panel8" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
+margin_top = 525.0
+margin_right = 300.0
+margin_bottom = 625.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/9"]
-margin_right = 100.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+[node name="Panel9" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
+margin_top = 630.0
+margin_right = 300.0
+margin_bottom = 730.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
 
-[node name="10" type="VBoxContainer" parent="Vertical/Horizontal/Content/Columns"]
-margin_left = 936.0
-margin_right = 1036.0
-margin_bottom = 620.0
+[node name="Panel10" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
+margin_top = 735.0
+margin_right = 300.0
+margin_bottom = 835.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
 
-[node name="Panel" type="Panel" parent="Vertical/Horizontal/Content/Columns/10"]
-margin_right = 100.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+[node name="Panel11" type="Panel" parent="Vertical/Horizontal/Content/Columns/5"]
+margin_top = 840.0
+margin_right = 300.0
+margin_bottom = 940.0
+rect_min_size = Vector2( 200, 100 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 2 )
 
 [connection signal="resized" from="Vertical/Horizontal/Content" to="." method="_on_Content_resized"]

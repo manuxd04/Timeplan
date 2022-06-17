@@ -30,8 +30,9 @@ func _reload_theme():
 		theme.set_stylebox(style_path, "Tabs", style)
 	
 	var font = DEFAULT.default_font.duplicate() as DynamicFont
-	font.size *= ui_scale
+	#font.size *= ui_scale
 	theme.default_font = font
+	
 
 
 
@@ -52,6 +53,7 @@ func _input(event):
 		emit_signal("reload")
 		_reload_theme()
 
+
 func grab_grabber(width, height):
 	width *= 0.25
 	height *= 0.5
@@ -63,5 +65,4 @@ func grab_grabber(width, height):
 	img.lock()
 	tex.create_from_image(img)
 	return tex
-
 
